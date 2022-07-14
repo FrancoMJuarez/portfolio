@@ -3,7 +3,9 @@ import React from "react";
 function About() {
   return (
     <div className="about">
-      <div className="about-image"></div>
+      <div className="about-image">
+        <div className='about-image-circle'></div>
+      </div>
       <div className="about-description">
         <h5>Hi...</h5>
         <h2>

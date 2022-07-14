@@ -1,5 +1,11 @@
 import React from "react";
 import emailjs from "emailjs-com";
+import { GoMail } from "react-icons/go";
+import { IoCallOutline } from "react-icons/io5";
+import { BsWhatsapp } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
+import { BsBehance } from "react-icons/bs";
 
 function Contact() {
   const sendEmail = (e) => {
@@ -26,38 +32,35 @@ function Contact() {
 
   return (
     <div className="contact">
-      <div className="contact-description">
-        <div className="contact-description-title">Contact</div>
-        <h2>Get in contact with me</h2>
-        <p>
-          En nuestra oficina siempre hay un mate o un café esperando por vos.
-          Pasate, contanos tu proyecto y buscamos la mejor forma de ayudarte.
-        </p>
-        <ul>
-          <li>Direccion</li>
-          <li>Numero</li>
-          <li>Mail</li>
-          <li>Linkedin</li>
-          <li>Github</li>
-        </ul>
-      </div>
+      <h1>CONTACT</h1>
       <form className="contact-form" onSubmit={sendEmail}>
-        <div className="contact-form-name">
-          <input type="text" placeholder="Name" name="name" required />
-        </div>
-        <div className="contact-form-mail">
-          <input type="text" placeholder="Mail" name="mail" required />
-        </div>
-        <div className="contact-form-message">
-          <textarea
-            placeholder="Your message"
-            rows="3"
-            name="message"
-            required
-          />
-        </div>
-        <button>Send message</button>
+        <input type="text" placeholder="Name" name="name" required />
+        <input type="text" placeholder="Mail" name="mail" required />
+        <textarea placeholder="Your message" rows="3" name="message" required />
+        <button>Send</button>
       </form>
+      <div className="contact-icons">
+        <div className="contact-icons-mail">
+          <GoMail /> <p>juarezmfranco@gmail.com</p>
+        </div>
+        <div className="contact-icons-phone">
+          <IoCallOutline /> <p>+54 9 223 4377312</p>
+        </div>
+        <div className="contact-icons-group">
+          <div>
+            <BsWhatsapp />
+          </div>
+          <div>
+            <BsInstagram />
+          </div>
+          <div>
+            <BsLinkedin />
+          </div>
+          <div>
+            <BsBehance />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
