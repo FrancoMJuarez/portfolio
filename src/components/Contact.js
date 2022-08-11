@@ -5,7 +5,7 @@ import { IoCallOutline } from "react-icons/io5";
 import { BsWhatsapp } from "react-icons/bs";
 import { BsInstagram } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
-import { BsBehance } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 
 function Contact() {
   const sendEmail = (e) => {
@@ -57,7 +57,7 @@ function Contact() {
             <BsLinkedin />
           </div>
           <div>
-            <BsBehance />
+            <BsGithub />
           </div>
         </div>
       </div>
