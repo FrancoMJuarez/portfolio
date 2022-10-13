@@ -16,16 +16,16 @@ export const ProyectMain = styled.div`
 export const ProyectContainer = styled.div`
   width: 60vw;
   height: 80vh;
-  border-radius: 2.5rem;
+  border-radius: 40px;
   background-color: white;
   display: grid;
   grid-auto-columns: minmax(auto, 1fr);
-  grid-template-areas: 'col1 col2';
-  padding: 3.75rem 1.25rem;
+  grid-template-areas: "col1 col2";
+  padding: 60px 20px;
 
   @media screen and (max-width: 768px) {
     width: 70vw;
-    grid-template-areas: 'col1' 'col2'
+    grid-template-areas: "col1" "col2";
   }
 
   @media screen and (max-width: 480px) {
@@ -35,9 +35,8 @@ export const ProyectContainer = styled.div`
 
 export const ProyectImage = styled.div`
   border: 1px solid black;
-  border-radius: 1.25rem;
+  border-radius: 20px;
   padding: 20% 10%;
-  background-image: url(${(props) => props.image});
   background-size: cover;
   background-position: center;
   grid-area: col1;
@@ -48,27 +47,32 @@ export const ProyectDescription = styled.div`
 `;
 
 export const ProyectTitle = styled.div`
-  font-size: 1.875rem;
+  font-size: 30px;
   border-bottom: 2px solid black;
-  margin: 0 0.675rem;
+  margin: 0 12px;
 `;
 
 export const ProyectText = styled.div`
-  padding: 0.9375rem 0.675rem;
+  padding: 15px 12px;
+`;
+
+export const ProyectButtonsSection = styled.div`
+  display: flex;
+  width: 100%;
 `;
 
 export const ProyectButtonWrapper = styled.div`
-  width: 100%;
+  flex-grow: 1;
   display: flex;
   justify-content: center;
 `;
 
 export const ProyectButton = styled.button`
-  width: 30%;
-  height: 2.5rem;
-  border: 2px solid black;
-  border-radius: 1.5625rem;
-  background-color: black;
+  width: 80%;
+  height: 40px;
+  border: ${({ primary }) => (primary ? "2px solid #00d8ff" : "2px solid black")};
+  border-radius: 25px;
+  background-color: ${({ primary }) => (primary ? "#00d8ff" : "black")};
   color: white;
   cursor: pointer;
 `;

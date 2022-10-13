@@ -6,6 +6,7 @@ import Sidebar from "../Sidebar";
 import { homeObjOne } from "../InfoSection/Data"
 import ContactSection from "../ContactSection";
 import ProyectsSection from "../ProyectsSection";
+import Footer from "../Footer";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,7 @@ const Home = () => {
       <ProyectsSection />
       <InfoSection {...homeObjOne}/>
       <ContactSection />
+      <Footer />
     </>
   );
 };

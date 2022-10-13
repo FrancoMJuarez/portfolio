@@ -1,72 +1,131 @@
-import styled from "styled-components"
-import img from "../../images/backgroundhome.jpg"
+import styled from "styled-components";
+import { Link as LinkS } from "react-scroll";
+import { keyframes } from "styled-components";
 
 export const HeroContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 800px;
-    position: relative;
-    z-index: 1;
-`
+  display: flex;
+  align-items: center;
+  height: 800px;
+  position: relative;
+  z-index: 1;
+  padding-left: 150px;
+  background-color: #010606;
+  // background-color: #e7e7e7;
 
-export const HeroBg = styled.div`
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-image: url(${img});
-    background-size: cover;
-    background-position: center;
-`
+  @media screen and (max-width: 768px) {
+    padding-left: 50px;
+  }
+
+  @media screen and (max-width: 480px) {
+    padding-left: 25px;
+  }
+`;
 
 export const HeroContent = styled.div`
-    z-index: 3;
-    max-width: 1200px;
-    position: absolute;
-    padding: 8px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
+  z-index: 3;
+  max-width: 1200px;
+  position: absolute;
+  padding: 8px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const HeroTag = styled.p`
+  color: white;
+  font-size: 24px;
+  border: 1px solid white;
+  font-weight: bold;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+
+  @media screen and (max-width: 768px) {
+    font-size: 22px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+  }
+`;
 
 export const HeroH1 = styled.h1`
-    color: black;
-    font-size: 48px;
-    text-align: center;
+  color: white;
+  font-size: 48px;
+  text-align: center;
 
-    @media screen and (max-width: 768px){
-        font-size: 40px
-    }
+  @media screen and (max-width: 768px) {
+    font-size: 40px;
+  }
 
-    @media screen and (max-width: 480px){
-        font-size: 32px
-    }
-`
+  @media screen and (max-width: 480px) {
+    font-size: 32px;
+  }
+`;
 
 export const HeroP = styled.p`
-    margin-top: 24px;
-    color: black;
-    font-size: 24px;
-    text-align: center;
-    max-width: 600px;
+  margin-top: 10px;
+  color: #b8b8b8;
+  font-size: 18px;
+  letter-spacing: 0.8px;
+  line-height: 1.5rem;
+  max-width: 600px;
 
-    @media screen and (max-width: 768px){
-        font-size: 24px
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+  }
+`;
+
+export const HeroBtnWrapper = styled(LinkS)`
+  margin-top: 60px;
+  display: flex;
+  align-items: center;
+  color: white;
+  letter-spacing: 0.8px;
+  font-size: 25px;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+    svg {
+      margin-left: 25px;
     }
+  }
 
-    @media screen and (max-width: 480px){
-        font-size: 18px
+  svg {
+    font-size: 25px;
+    margin-left: 10px;
+    transition: 0.3s ease-in-out;
+    line-height: 1;
+  }
+`;
+
+const updown = keyframes`
+    0% {
+        transform: translateY(-20px);
     }
-`
+    50% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+`;
 
-export const HeroBtnWrapper = styled.div`
-    margin-top: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-`
+export const HeroLogo = styled.div`
+  position: relative;
+  left: 700px;
+
+  svg {
+    color: #00d8ff;
+    font-size: 500px;
+    animation: ${updown} 3s ease-in-out infinite;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`;

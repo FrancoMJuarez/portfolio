@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { animateScroll as scroll } from "react-scroll";
 import {
   Nav,
@@ -12,13 +12,24 @@ import {
 import { FaBars } from "react-icons/fa";
 
 const Navbar = ({ toggleSidebar }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  const activeNavbar = () => {
+    if (window.scrollY >= 80) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+  };
+  window.addEventListener("scroll", activeNavbar);
+
   const toggleHome = () => {
     scroll.scrollToTop();
   };
 
   return (
     <>
-      <Nav>
+      <Nav isActive={isActive}>
         <NavbarContainer>
           <NavLogo to="/" onClick={() => toggleHome()}>
             Franco Juarez

@@ -8,6 +8,7 @@ export const ContactContainer = styled.div`
     height: 800px;
     position: relative:
     z-index: 1;
+    background-color: #f9f9f9;
 `;
 
 export const ContactH1 = styled.h1`
@@ -24,7 +25,7 @@ export const ContactH1 = styled.h1`
   } ;
 `;
 
-export const ContactForm = styled.div`
+export const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -120,12 +121,13 @@ export const SocialItem = styled.div`
   border: 3px solid black;
   border-radius: 1.875rem;
   margin-left: 0.3125rem;
-  transition: 0.5s;
+  transition: 0.3s;
   font-size: 2rem;
 
   &:hover{
     color: white;
-    background-color: black;
-    transition: 0.5s;
+    background-color: #00d8ff;
+    border: 3px solid #00d8ff;
+    transition: 0.3s;
   }
 `;
