@@ -22,13 +22,8 @@ const InfoSection = ({
   headLine,
   darkText,
   description,
-  buttonLabel,
   img,
   alt,
-  primary,
-  dark,
-  dark2,
-  buttonDisplay
 }) => {
   return (
     <>

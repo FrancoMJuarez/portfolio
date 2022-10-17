@@ -7,10 +7,7 @@ import {
   InputMessage,
   ContactButton,
   ContactWrapper,
-  ContactLogo,
-  ContactP,
   SocialWrapper,
-  SocialItem
 } from "./ContactElements";
 import { GoMail } from "react-icons/go";
 import { IoCallOutline } from "react-icons/io5";
@@ -43,48 +40,61 @@ const ContactSection = () => {
     e.target.reset();
   };
 
-// Anadir animacion cuando se pase el mouse sobre los iconos para que se levanten.
-
   return (
     <>
       <ContactContainer id="contact">
         <ContactH1>Contact</ContactH1>
         <ContactForm onSubmit={sendEmail}>
-          <InputContact type="input" placeholder="Name" name="name"></InputContact>
-          <InputContact type="input" placeholder="Mail" name="mail"></InputContact>
+          <InputContact
+            type="input"
+            placeholder="Your Name"
+            name="name"
+            grid="name"
+            first
+          ></InputContact>
+          <InputContact
+            type="input"
+            placeholder="Your Mail"
+            name="mail"
+            grid="mail"
+            first
+          ></InputContact>
+          <InputContact
+            type="input"
+            placeholder="Write a subject"
+            name="subject"
+            grid="subject"
+          ></InputContact>
           <InputMessage
             type="textarea"
             placeholder="Your Message"
-            rows="3"
+            rows="5"
             name="message"
+            grid="message"
           ></InputMessage>
-          <ContactButton>Send</ContactButton>
+          <ContactButton grid="button">SEND</ContactButton>
         </ContactForm>
         <ContactWrapper>
-          <ContactLogo>
-            <GoMail />
-          </ContactLogo>
-          <ContactP>juarezmfranco@gmail.com</ContactP>
+          <GoMail />
+          <p>juarezmfranco@gmail.com</p>
         </ContactWrapper>
         <ContactWrapper>
-          <ContactLogo>
-            <IoCallOutline />
-          </ContactLogo>
-          <ContactP>+54 9 223 4377312</ContactP>
+          <IoCallOutline />
+          <p>+54 9 223 4377312</p>
         </ContactWrapper>
         <SocialWrapper>
-          <SocialItem>
+          <div>
             <BsWhatsapp />
-          </SocialItem>
-          <SocialItem>
+          </div>
+          <div>
             <BsInstagram />
-          </SocialItem>
-          <SocialItem>
+          </div>
+          <div>
             <BsLinkedin />
-          </SocialItem>
-          <SocialItem>
+          </div>
+          <div>
             <BsGithub />
-          </SocialItem>
+          </div>
         </SocialWrapper>
       </ContactContainer>
     </>

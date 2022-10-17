@@ -10,7 +10,6 @@ export const HeroContainer = styled.div`
   z-index: 1;
   padding-left: 150px;
   background-color: #010606;
-  // background-color: #e7e7e7;
 
   @media screen and (max-width: 768px) {
     padding-left: 50px;
@@ -48,13 +47,35 @@ export const HeroTag = styled.p`
   }
 `;
 
+const disappear = keyframes`
+  0% {opacity: 1;}
+  100% {opacity: 0}
+`;
+
 export const HeroH1 = styled.h1`
   color: white;
+  margin-top: 5px;
   font-size: 48px;
-  text-align: center;
+  min-height: 137.1px;
+  max-width: 350px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    margin-left: 5px;
+    height: 65px;
+    width: 4px;
+    background-color: white;
+    animation: ${disappear} 0.9s ease infinite;
+  }
 
   @media screen and (max-width: 768px) {
     font-size: 40px;
+    min-height: 91.2px;
+    max-width: 210px;
+    &::after {
+      height: 45px;
+    }
   }
 
   @media screen and (max-width: 480px) {

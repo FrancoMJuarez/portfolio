@@ -55,7 +55,7 @@ export const TextWrapper = styled.div`
 export const TopLine = styled.p`
   color: #00d8ff;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 1rem;
   font-weight: 700;
   letter-spacing: 1.4px;
   text-transform: uppercase;
@@ -80,11 +80,6 @@ export const Subtitle = styled.p`
   font-size: 18px;
   line-height: 24px;
   color: ${({ darkText }) => (darkText ? "#010606" : "white")};
-`;
-
-export const BtnWrap = styled.div`
-  display: ${({ buttonDisplay }) => (buttonDisplay ? "flex" : "none")};
-  justify-content: flex-start;
 `;
 
 export const ImgWrap = styled.div`

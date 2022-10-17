@@ -10,6 +10,7 @@ import {
   NavLinks,
 } from "./NavbarElements";
 import { FaBars } from "react-icons/fa";
+import { ReactComponent as MyLogo } from "../../images/logo.svg";
 
 const Navbar = ({ toggleSidebar }) => {
   const [isActive, setIsActive] = useState(false);
@@ -34,7 +35,10 @@ const Navbar = ({ toggleSidebar }) => {
           <NavLogo to="/" onClick={() => toggleHome()}>
             Franco Juarez
           </NavLogo>
-          <MobileIcon onClick={() => toggleSidebar()}>
+          {/* <div>
+            <MyLogo fill="white" transform="scale(0.5)" onClick={() => toggleHome()}/>
+          </div> */}
+          <MobileIcon isActive={isActive} onClick={() => toggleSidebar()}>
             <FaBars />
           </MobileIcon>
           <NavMenu>

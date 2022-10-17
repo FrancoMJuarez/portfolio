@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { Link as LinkS } from "react-scroll";
 
 export const Nav = styled.div`
-  height: 80px;
   margin-top: -80px;
+  height: ${({isActive}) => (isActive? '60px': '80px')}};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,6 +12,7 @@ export const Nav = styled.div`
   top: 0;
   z-index: 10;
   background-color: ${({isActive}) => (isActive? 'rgba(0, 0, 0, 0.2)': 'transparent')}};
+  box-shadow: ${({isActive}) => (isActive? '0 0 10px rgba(0,0,0,0.1)': '')}};
   transition: 0.8s all ease;
 `;
 
@@ -46,9 +47,10 @@ export const MobileIcon = styled.div`
     top: 0;
     right: 0;
     transform: translate(-100%, 60%);
-    font-size: 1.8rem;
+    font-size: ${({isActive}) => (isActive? '1.35rem': '1.8rem')}};
     cursor: pointer;
     color: white;
+    transition: 0.8s all ease;
   };
 `
 
@@ -65,7 +67,7 @@ export const NavMenu = styled.ul`
 `
 
 export const NavItem = styled.li`
-  height: 80px
+  height: 60px;
 `
 
 export const NavLinks = styled(LinkS)`
